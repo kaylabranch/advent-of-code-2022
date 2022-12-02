@@ -1,1 +1,3 @@
-export const test_input = ``;
+export const test_input = `A Y
+B X
+C Z`;

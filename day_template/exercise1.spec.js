@@ -5,9 +5,8 @@ import { test_input } from "./test_input.js";
 describe("day #, exercise 1", function () {
   it("test input", function () {
     // arrange
-    const testResult = myFunc(test_input);
-
     // act
+    const testResult = myFunc(test_input);
 
     // assert
     expect(testResult).toBe();
@@ -16,9 +15,8 @@ describe("day #, exercise 1", function () {
   // once solved, test real input:
   it("real input", function () {
     // arrange
-    const testResult = myFunc(input);
-
     // act
+    const testResult = myFunc(input);
 
     // assert
     expect(testResult).toBe();
