@@ -2,7 +2,7 @@ import { myFunc } from "./exercise2.js";
 import { input } from "./input.js";
 import { test_input } from "./test_input.js";
 
-describe("day #, exercise 2", function () {
+describe("day 4, exercise 2", function () {
   it("test input", function () {
     // arrange
     // act
