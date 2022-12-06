@@ -13,16 +13,16 @@ export function myFunc(input) {
 
   const charArray = Array.from(...data);
   charArray.every((value, index) => {
-    // starting at {numPacketChars} char,
-    if (index > 12) {
-      // look back at previous {numPacketChars}, add all to temp set
-      const previous = new Set();
+    // starting at {numPacketChars} char (num - 2 because it's zero indexed and greater than)
+    if (index > numPacketChars - 2) {
+      // look back at previous {numPacketChars} of items, add all to temp set
+      const group = new Set();
       for (let i = 0; i < numPacketChars; i++) {
-        previous.add(charArray[index - i]);
+        group.add(charArray[index - i]);
       }
 
       // if set length is {numPacketChars} we have our marker - return index and false
-      if (previous.size === numPacketChars) {
+      if (group.size === numPacketChars) {
         lengthToMarker = index + 1;
         return false;
       }
