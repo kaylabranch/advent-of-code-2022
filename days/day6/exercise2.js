@@ -1,8 +1,6 @@
 import { input } from "./input.js";
 import { TextListToArrayOfStrings } from "../../data-loaders.js";
 
-// PROBLEM
-
 // SOLUTION:
 export function myFunc(input) {
   const numPacketChars = 14;
@@ -18,13 +16,13 @@ export function myFunc(input) {
     // starting at {numPacketChars} char,
     if (index > 12) {
       // look back at previous {numPacketChars}, add all to temp set
-      const previousFour = new Set();
+      const previous = new Set();
       for (let i = 0; i < numPacketChars; i++) {
-        previousFour.add(charArray[index - i]);
+        previous.add(charArray[index - i]);
       }
 
-      // if set length is 4 we have our marker - return index and false
-      if (previousFour.size === numPacketChars) {
+      // if set length is {numPacketChars} we have our marker - return index and false
+      if (previous.size === numPacketChars) {
         lengthToMarker = index + 1;
         return false;
       }
