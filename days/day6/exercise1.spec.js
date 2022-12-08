@@ -8,7 +8,7 @@ import {
   test_input5,
 } from "./test_input.js";
 
-describe("day #, exercise 1", function () {
+describe("day 6, exercise 1", function () {
   it("test input", function () {
     // arrange
     // act
