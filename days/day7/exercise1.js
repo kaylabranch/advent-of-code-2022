@@ -48,21 +48,14 @@ export function myFunc(input) {
     }
   });
 
-  // if a directory totalSize > max size, add that directory to a Set of directories to total
-  // end up with set of directories to add
-  const directoriesToAdd = new Set();
+  // finally go through dirs and sum totalSizes if size < maxSize
+  let totalSize = 0;
   const maxSize = 100000;
   for (const dir in fileSystem) {
     if (fileSystem[dir].totalSize < maxSize) {
-      directoriesToAdd.add(dir);
+      totalSize += fileSystem[dir].totalSize;
     }
   }
-
-  // finally go through dir list and sum totalSizes
-  let totalSize = 0;
-  directoriesToAdd.forEach((dir) => {
-    totalSize += fileSystem[dir].totalSize;
-  });
 
   return totalSize;
 }
